@@ -9,14 +9,46 @@ body {
     position: relative;
 
 }
-.wishes {
+.message-box {
     margin-top: 5%;
+
     width: 80%;
     height: 100%;
+    
+    
+    position: fles;
+    background-color: rgb(80, 6, 6);
+    opacity: 60%;
+    border-radius: 15px;
+    
+}
+
+.header-box {
+    margin-top: 3%;
+    padding-bottom: 0;
+    width: 80%;
+    height: 100%;
+    border-color: antiquewhite;
+    border-width: 1px;
+    border-style: solid;
 
     position: relative;
     background-color: rgb(80, 6, 6);
+    opacity: 60%;
     border-radius: 15px;
+}
+.present-box {
+    margin-top: 5%;
+    width: 80%;
+    height: 100%;
+    
+    
+    position: relative;
+    background-color: rgb(80, 6, 6);
+    opacity: 60%;
+    border-radius: 15px;
+    border: 1px solid white;
+    
 }
 .snowflakes {
     position: fixed;
@@ -146,10 +178,74 @@ h1 {
 }
 
 .gift-icon {
-    font-size: 15em;
+    font-size: 8em;
     margin-bottom: 20px;
     position: relative;
-    z-index: 1;
+}
+
+/* pyramid layout for gift icons: centered rows with increasing counts */
+.gift-triangle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: 0.6rem;
+}
+.gift-row {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+}
+/* scope down the global .gift-icon size when used in the pyramid */
+.gift-triangle .gift-icon {
+    font-size: 5rem;
+    margin-bottom: 5%;
+    margin-inline: 2%;
+    line-height: 1;
+}
+
+/* hover/focus: grow and glow for each present */
+.gift-triangle .gift-icon {
+    transition: transform 200ms cubic-bezier(.2,.9,.2,1), filter 220ms ease, text-shadow 220ms ease;
+    transform-origin: center;
+    cursor: pointer;
+}
+.gift-triangle .gift-icon:hover,
+.gift-triangle .gift-icon:focus {
+    transform: scale(1.22);
+    filter: drop-shadow(0 10px 30px rgba(255,215,90,0.95));
+    text-shadow: 0 0 12px rgba(255,230,150,0.95);
+    outline: none;
+}
+
+/* star on top of the gift stack */
+.tree-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -0.6rem; /* tuck the star slightly into the top row */
+}
+.star-icon {
+    font-size: 7rem;
+    color: #ffd700; /* gold */
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.35));
+    text-shadow: 0 1px 0 rgba(255,255,255,0.25);
+    transition: transform 180ms ease, filter 180ms ease, text-shadow 180ms ease;
+    cursor: default;
+    transform-origin: center;
+    animation: star-pulse 3s ease-in-out infinite;
+}
+.star-icon:focus,
+.star-icon:hover {
+    transform: scale(1.18);
+   
+}
+
+@keyframes star-pulse {
+    0% { transform: scale(1); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.35)); }
+    45% { transform: scale(1.08); filter: drop-shadow(0 8px 20px rgba(255,200,60,0.6)); }
+    55% { transform: scale(1.06); filter: drop-shadow(0 10px 22px rgba(255,200,60,0.8)); }
+    100% { transform: scale(1); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.35)); }
 }
 
 /* top-most large static snowflakes (overlapping, 50% opacity) */
@@ -240,4 +336,21 @@ h1 {
     0% { transform: rotate(-6deg); }
     50% { transform: rotate(6deg); }
     100% { transform: rotate(-6deg); }
+}
+
+/* typing effect for header */
+.typing {
+    font-family: 'Courier New', Courier, monospace;
+    white-space: pre-wrap;
+    display: inline-block;
+    color: white;
+}
+.typing-cursor {
+    display: inline-block;
+    color: #ffd700;
+    margin-left: 0.25rem;
+    animation: blink 1s steps(2) infinite;
+}
+@keyframes blink {
+    50% { opacity: 0; }
 }
