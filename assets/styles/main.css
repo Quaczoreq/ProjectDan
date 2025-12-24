@@ -17,7 +17,7 @@ body {
     
     
     position: fles;
-    background-color: rgb(80, 6, 6);
+    background-color: rgb(81, 5, 5);
     opacity: 60%;
     border-radius: 15px;
     
@@ -25,17 +25,31 @@ body {
 
 .header-box {
     margin-top: 3%;
-    padding-bottom: 0;
     width: 80%;
     height: 100%;
-    border-color: antiquewhite;
+    border-color: rgb(255, 255, 255);
     border-width: 1px;
     border-style: solid;
 
     position: relative;
     background-color: rgb(80, 6, 6);
-    opacity: 60%;
+    opacity: 80%;
     border-radius: 15px;
+}
+.header-box2 {
+   margin-top: 3%;
+   padding: 10px;
+    width: 80%;
+    height: 100%;
+    border-color: rgb(255, 255, 255);
+    border-width: 1px;
+    border-style: solid;
+
+    position: relative;
+    background-color: rgb(80, 6, 6);
+    opacity: 80%;
+    border-radius: 15px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .present-box {
     margin-top: 5%;
@@ -45,10 +59,39 @@ body {
     
     position: relative;
     background-color: rgb(80, 6, 6);
-    opacity: 60%;
+    opacity: 80%;
     border-radius: 15px;
     border: 1px solid white;
     
+}
+
+.footer {
+    background-color: rgb(67, 103, 41);
+    width: 100%;
+    margin: 1.5rem auto 2rem auto;
+    color: rgb(247, 248, 154);
+    text-align: center;
+    font-size: 0.9rem;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.4;
+    opacity: 0.9;
+    overflow: hidden;
+    position: relative;
+}
+.footer-marquee {
+    display: inline-block;
+    white-space: nowrap;
+    padding-left: 100%;
+    animation: footer-scroll 14s linear infinite;
+}
+.footer-text {
+    display: inline-block;
+    padding-right: 2rem;
+}
+
+@keyframes footer-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
 }
 .snowflakes {
     position: fixed;
@@ -218,6 +261,50 @@ h1 {
     outline: none;
 }
 
+/* first gift hover: reveal circular Tony Lego photo */
+.gift-with-photo {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: inherit;
+    width: 5rem;
+    height: 5rem;
+}
+.gift-with-photo .gift-emoji {
+    display: inline-block;
+    transition: opacity 140ms ease, transform 140ms ease;
+}
+.gift-with-photo .gift-photo {
+    position: absolute;
+    inset: 0;
+    transform: scale(0.86);
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 14px 30px rgba(0,0,0,0.35), 0 0 0 5px #ffecb3, 0 0 0 10px #d7263d;
+    background: linear-gradient(145deg, #ffffff, #f8f8f8);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 160ms ease, transform 160ms ease;
+}
+.gift-with-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.gift-with-photo:hover .gift-photo,
+.gift-with-photo:focus .gift-photo {
+    opacity: 1;
+    transform: scale(1);
+}
+.gift-with-photo:hover .gift-emoji,
+.gift-with-photo:focus .gift-emoji {
+    opacity: 0;
+    transform: scale(0.72);
+}
+
 /* star on top of the gift stack */
 .tree-top {
     display: flex;
@@ -234,6 +321,7 @@ h1 {
     cursor: default;
     transform-origin: center;
     animation: star-pulse 3s ease-in-out infinite;
+    font-size: 4rem;
 }
 .star-icon:focus,
 .star-icon:hover {
@@ -265,7 +353,7 @@ h1 {
     color: white;
     line-height: 1;
     user-select: none;
-    /* strong out-of-focus blur for soft, distant look */
+ /* strong out-of-focus blur for soft, distant look */
     filter: blur(6px) drop-shadow(0 2px 6px rgba(0,0,0,0.25));
     -webkit-filter: blur(6px) drop-shadow(0 2px 6px rgba(0,0,0,0.25));
     transform: translateZ(0);
@@ -354,3 +442,4 @@ h1 {
 @keyframes blink {
     50% { opacity: 0; }
 }
+
