@@ -443,3 +443,131 @@ h1 {
     50% { opacity: 0; }
 }
 
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        margin: 5%;
+        font-size: 1.8em;
+    }
+
+    .header-box,
+    .header-box2,
+    .present-box {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+    }
+
+    .gift-icon {
+        font-size: 5em;
+        margin-bottom: 10px;
+    }
+
+    .gift-triangle .gift-icon {
+        font-size: 3rem;
+        margin-bottom: 3%;
+    }
+
+    .gift-with-photo {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .gift-with-photo .gift-photo {
+        box-shadow: 0 8px 16px rgba(0,0,0,0.35), 0 0 0 3px #ffecb3, 0 0 0 6px #d7263d;
+    }
+
+    .star-icon {
+        font-size: 2.5rem;
+    }
+
+    .footer {
+        font-size: 0.75rem;
+        margin: 1rem auto;
+        padding: 5px;
+    }
+
+    .footer-marquee {
+        animation: footer-scroll 20s linear infinite;
+    }
+
+    .snowflakes,
+    .snowflakes2,
+    .snowflakes3 {
+        opacity: 0.3;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        margin: 3%;
+        font-size: 1.4em;
+    }
+
+    .header-box,
+    .header-box2,
+    .present-box {
+        width: 98%;
+        padding: 8px;
+        margin-top: 2%;
+    }
+
+    .gift-icon {
+        font-size: 4em;
+        margin-bottom: 8px;
+    }
+
+    .gift-triangle .gift-icon {
+        font-size: 2.2rem;
+        margin-bottom: 2%;
+        margin-inline: 1%;
+    }
+
+    .gift-row {
+        gap: 0.3rem;
+    }
+
+    .gift-triangle {
+        gap: 0.2rem;
+    }
+
+    .gift-with-photo {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .gift-with-photo .gift-photo {
+        box-shadow: 0 6px 12px rgba(0,0,0,0.35), 0 0 0 2px #ffecb3, 0 0 0 4px #d7263d;
+    }
+
+    .star-icon {
+        font-size: 2rem;
+        margin-bottom: -0.3rem;
+    }
+
+    .footer {
+        font-size: 0.65rem;
+        margin: 0.8rem auto 1rem auto;
+        padding: 4px;
+    }
+
+    .footer-text {
+        padding-right: 1rem;
+    }
+
+    .snowflakes,
+    .snowflakes2,
+    .snowflakes3 {
+        display: none;
+    }
+
+    .snow-static-large {
+        display: none;
+    }
+}
+
